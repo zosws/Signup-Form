@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEAA Signup Form</title>
+    <style>
+        body {
+            background-color: #e6f7ff;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        h2 {
+            color: #ff66b2;
+            text-align: center;
+        }
+
+        h3 {
+            color: #ff66b2;
+            text-align: justify;
+        }
+
+        form {
+            background-color: #b3e6ff;
+            width: 500px;
+            padding: 25px;
+            margin: auto;
+            border-radius: 10px;
+            text-align: justify;
+        }
+
+        span {
+            color: red;
+            font-size: 15px;
+        }
+
+        .logo {
+            width: 35px;
+        }
+
+        button {
+            background-color: #ff66b2;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #ff4da6;
+        }
+    </style>
+</head>
+<body>
+    <!--Title of the page as well as the website's logo-->
+    <h2>
+        <img src="logo.png" class="logo">
+        SEAA Signup Form
+    </h2>
+
+    <form>
+        <!--Where the user inputs basic information and displays the error message if necessary once submitted-->
+        <h3>Basic Information</h3>
+
+            Full Name (Min. 2 Characters):
+            <br><input type="text" id="fullname"><br>
+            <span id="nameError"></span><br>
+
+            Birthdate (Must be >13):
+            <br><input type="date" id="birthdate"><br>
+            <span id="bdayError"></span><br>
+
+            Sex:
+            <br><input type="radio" name="sex" value="male"> Male<br>
+            <input type="radio" name="sex" value="female"> Female<br>
+            <span id="sexError"></span> <br>
+
+            Email:
+            <input type="text" id="email"><br>
+            <span id="emailError"></span>
+
+        <!--Where the user inputs account information and displays the error message if necessary once submitted-->
+        <h3>Account Details</h3>
+
+            Username (8-20 Characters):
+            <br><input type="text" id="username"><br>
+            <span id="unameError"></span><br>
+
+            Password (Min. 10 Characters, Must contain one uppercase, lowercase and digit.):
+            <br><input type="password" id="password"><br>
+            <span id="passError"></span><br>
+
+            Confirm Password:
+            <br><input type="password" id="confirm"><br>
+            <span id="pass2Error"></span>
+         
+        <!--Where the user selects way of supporting aquatic life and displays the error message if necessary once submitted-->
+        <h3>Support for Aquatic Life</h3>
+
+            What activities interest you?
+            <br><input type="checkbox" name="activity" value="cleanup"> Beach Cleanups <br>
+            <input type="checkbox" name="activity" value="awareness"> Awareness Campaigns <br>
+            <input type="checkbox" name="activity" value="donation"> Donations <br>
+            <span id="activityError"></span><br>
+
+            Ways You Want to Help:<br>
+            <input type="checkbox" name="help" value="donate"> Donate<br>
+            <input type="checkbox" name="help" value="volunteer"> Volunteer<br>
+            <input type="checkbox" name="help" value="awareness"> Awareness<br>
+            <span id="helpError"></span><br>
+
+            How often do you support environmental causes?<br>
+            <input type="radio" name="support" value="often"> Often<br>
+            <input type="radio" name="support" value="sometimes"> Sometimes<br>
+            <input type="radio" name="support" value="rarely"> Rarely<br>
+            <span id="supportError"></span><br>
+
+
+        <!--Submit button which triggers the function validateForm, checking for any errors-->
+        <button type="button" onclick="validateForm()">
+            Join SEAA and Save Marine Life!
+        </button>
+    </form>
+
+    <!--If there is no error, it sends the success message once submitted-->
+    <p id="successMessage"></p>
+    <script src="script.js"></script>
+</body>
+</html>
